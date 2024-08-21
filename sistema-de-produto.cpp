@@ -7,7 +7,7 @@ main(){
 	setlocale(LC_ALL, "Portuguese");
 	
 	
-	int qtd[5], i=0, sair=0, opcao=0, z=0, qtd_vendas=0;
+	int qtd[5], i=0, sair=0, opcao=0, z=0, qtd_venda=0;
 	char produto[10][10], nome[10];
 	float valor[10], vlr_venda;
 
@@ -37,6 +37,7 @@ main(){
 				
 				printf("\n-----");
 				i++;
+				printf("\n---PRODUTO CADASTRADO COM SUCESSO!---");
 				break;
 			case 2:
 				printf("\n### LISTAR PRODUTO ###");
@@ -67,8 +68,10 @@ main(){
 				}
 				break;
 			case 4:
+				
 				break;
 			default:
+				printf("\n---Opção Inválida!---\n");
 				break;
 		}
 		
