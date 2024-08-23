@@ -19,7 +19,7 @@ main(){
 		printf("\n3 - BUSCAR");
 		printf("\n4 - VENDAS");
 		
-		printf("\nEscolha uma opção: ");
+		printf("\nEscolha uma opÃ§Ã£o: ");
 		scanf("%d",&opcao);
 		
 		switch(opcao){
@@ -43,11 +43,11 @@ main(){
 				printf("\n### LISTAR PRODUTO ###");
 				
 				for(z=0;z<10;z++){
-					printf("\n-----");
-					printf("\nNome: %s",produto[z]);
+                    			printf("\n-----");
+                   			printf("\nNome: %s",produto[z]);
 					printf("\nValor: %.2f",valor[z]);
 					printf("\nQuantidade: %d",qtd[z]);
-					printf("\n-----");	
+					printf("\n-----");
 				}
 			
 				break;
@@ -59,6 +59,7 @@ main(){
 					printf("\nDigite o Nome do Produto: ");
 					scanf("%s",&nome);
 					if(strcmp(produto[z],nome)==0){
+                        			printf("PRODUTO ENCONTRADO");
 						printf("\n-----");
 						printf("\nNome: %s",produto[z]);
 						printf("\nValor: %.2f",valor[z]);
@@ -68,14 +69,47 @@ main(){
 				}
 				break;
 			case 4:
-				
+				printf("\n### VENDA DE PRODUTO ###");
+
+                		for(z=0;z<10;z++){
+                   			 printf("\n-----");
+                    			printf("\nNome: %s",produto[z]);
+					printf("\nValor: %.2f",valor[z]);
+					printf("\nQuantidade: %d",qtd[z]);
+					printf("\n-----");
+				}
+
+                		printf("DIGITE O NOME DO PRODUTO PARA COMPRA\n");
+				scanf("%s",&nome);
+                		for ( z = 0; z < 10; z++)
+                		{
+                   			 if(strcmp(produto[z],nome)==0){
+                        			printf("PRODUTO ENCONTRADO");
+						printf("\n-----");
+						printf("\nNome: %s",produto[z]);
+						printf("\nValor: %.2f",valor[z]);
+						printf("\nQuantidade %d",qtd[z]);
+						printf("\n-----");
+
+                       				 printf("Digite a quantidade que deseja comprar\n");
+                      				  scanf("%d",&qtd_venda);
+
+                       				 vlr_venda = qtd_venda * valor[z];
+                       				 qtd[z] -= qtd_venda;
+                        			printf("VALOR DA COMPRA: %.2f\n", vlr_venda);
+                        			printf("VENDA REALIZADA COM SUCESSO");
+                        
+					}	
+               		 	}
+                
 				break;
 			default:
-				printf("\n---Opção Inválida!---\n");
+				printf("\n---Opï¿½ï¿½o Invï¿½lida!---\n");
 				break;
 		}
 		
 		printf("\nDigite 1 p/ Continuar ou 0 p/ Sair: ");
 		scanf("%d",&sair);
 	}while(sair != 0);
+
 }
